@@ -28,10 +28,11 @@
 	if($all){
 		($doWithUsers.'All')($link);
 	}else{
-		print_r($users.'<br>');
+		print_r($users);
 		foreach ($users as $login) {
-			print_r($login.'<br>')
+			print_r($login);
 			($doWithUsers.'User')($login,$link);
+			print_r($login);
 			if ($login==$_SESSION['user']) {
 					print_r($_SESSION['user']);
 					session_destroy();
