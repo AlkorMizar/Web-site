@@ -3,6 +3,8 @@
     	if(!isUnblocked($_SESSION['user'],$link)){
     		closeDatabase($link);
     		session_destroy();
+    		header('Location: /singIn.php');
+			exit();	
     	}
     }
 ?>

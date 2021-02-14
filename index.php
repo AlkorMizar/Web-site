@@ -14,11 +14,12 @@
 
     <nav class="my-2 my-md-0 me-md-3">
     
-    <?php if(empty($_SESSION['user'])): ?> 
+    <?php if(empty($_SESSION['user'])): ?>  
       <a class="btn btn-outline-secondary" href="singUp.php">Sign up</a>
       <a class="btn btn-outline-primary" href="singIn.php">Log in</a>
     
     <?php else: ?>
+      <a ><u><?php echo $_SESSION['user'];?></u></a> 
       <a class="btn btn-outline-secondary" href="singOut.php">Log out</a>   
     <?php endif; ?>  
 

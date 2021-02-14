@@ -46,21 +46,18 @@ ini_set('display_startup_errors', 1);
 
 	$_SESSION['errorSingUp']='1'; 
 	if (!initDatabase('table',$link)) {
-		$_SESSION['errorSingUp']='2';
 		$error=insertUser($login,$email,$password,$link);
 		closeDatabase($link);
         
         if($error==0){
         	unset($_SESSION['errorSingUp']);
         	$_SESSION['user']=$login;
-        	$_SESSION['errorSingUp']='3';
 			header('Location: /');
 			exit();
         }elseif($error===DUPLICATE_IN_SQL){
         	$_SESSION['errorSingUp']='Such email or login already exists';
         }
     }    
-    $_SESSION['errorSingUp']='4';
 	header('Location: /singUp.php');
 	exit();	
 ?>
