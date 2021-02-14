@@ -7,8 +7,9 @@
 		$server = $url["host"];
 		$username = $url["user"];
 		$password = $url["pass"];
-		$db = substr($url["path"], 1);
 
+		$db = substr($url["path"], 1);
+		print_r($db);
 		$link = new mysqli($server, $username, $password, $db);
 		return mysqli_connect_errno();
 	};
