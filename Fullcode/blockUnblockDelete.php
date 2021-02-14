@@ -38,7 +38,7 @@
 				}	
 		}
 	}
-
+	closeDatabase($link);
 	header('Location: /');
 
  ?>

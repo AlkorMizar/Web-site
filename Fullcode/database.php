@@ -21,7 +21,7 @@
 	function insertUser($login,$email,$password,$link){
 		$query ="INSERT INTO users ( login,email, password) VALUES ('$login','$email','$password')" ;
     	mysqli_query($link, $query);
-    	return  mysqli_error($link);
+    	return  mysqli_errno($link);
 	}
 
 	function selectPasswords($login,&$password,$link){
