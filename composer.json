@@ -1,0 +1,8 @@
+{
+    "name": "anisa/html",
+    "description": "Simple web-app",
+    "type": "library",
+    "license": "GPL-2.0-only / GPL-2.0-or-late",
+    "minimum-stability": "dev",
+    "require": {}
+}
