@@ -24,21 +24,21 @@
 
 	initDatabase('table',$link);
 
+	echo "string2";
 	if($all){
 		($doWithUsers.'All')($link);
 	}else{
-		print_r($users);
 		foreach ($users as $login) {
-			print_r($login.'<br>');
 			($doWithUsers.'User')($login,$link);
 			if ($login==$_SESSION['user']) {
 					print_r($_SESSION['user']);
 					session_destroy();
-					print_r($_SESSION['user']);
 				}	
 		}
 	}
+	echo "string";
 	closeDatabase($link);
+	echo "string1";
 	header('Location: /');
 
  ?>
