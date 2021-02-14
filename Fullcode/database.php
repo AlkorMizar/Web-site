@@ -10,7 +10,7 @@
 		$db = substr($url["path"], 1);
 
 		$link = new mysqli($server, $username, $password, $db);
-		return mysqli_connect_errno($link);
+		return mysqli_connect_errno();
 	};
 
 	function closeDatabase($link){
