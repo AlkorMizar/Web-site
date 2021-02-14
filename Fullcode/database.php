@@ -48,39 +48,39 @@
 
 	function deleteUser($login,$link){
 		$query ="DELETE FROM users WHERE login = '$login'";
-		$users=mysqli_fetch_all(mysqli_query($link, $query),MYSQLI_ASSOC); 
+		mysqli_query($link, $query); 
 		return mysqli_errno($link);	
 	}
 
 	function deleteAll($link){
 		$query ="DELETE FROM users";
-		$users=mysqli_fetch_all(mysqli_query($link, $query),MYSQLI_ASSOC); 
+		mysqli_query($link, $query); 
 		return mysqli_errno($link);	
 	}
 
 	function blockUser($login,$link){
 		print_r("insaid");
 		$query ="UPDATE users SET status='Blocked' WHERE login = '$login'";
-		$users=mysqli_fetch_all(mysqli_query($link, $query),MYSQLI_ASSOC); 
+		mysqli_query($link, $query); 
 		print_r("out");
 		return mysqli_errno($link);	
 	}
 
 	function blockAll($link){
 		$query ="UPDATE users SET status='Blocked'";
-		$users=mysqli_fetch_all(mysqli_query($link, $query),MYSQLI_ASSOC); 
+		mysqli_query($link, $query); 
 		return mysqli_errno($link);	
 	}
 
 	function unblockUser($login,$link){
 		$query ="UPDATE users SET status='Free' WHERE login = '$login'";
-		$users=mysqli_fetch_all(mysqli_query($link, $query),MYSQLI_ASSOC); 
+		mysqli_query($link, $query); 
 		return mysqli_errno($link);	
 	}
 
 	function unblockAll($link){
 		$query ="UPDATE users SET status='Free'";
-		$users=mysqli_fetch_all(mysqli_query($link, $query),MYSQLI_ASSOC); 
+		mysqli_query($link, $query); 
 		return mysqli_errno($link);	
 	}
     
