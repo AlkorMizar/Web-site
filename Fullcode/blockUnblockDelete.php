@@ -24,11 +24,13 @@
 
 	initDatabase('table',$link);
 
-	echo "string2";
+	echo "string2<br>";
 	if($all){
 		($doWithUsers.'All')($link);
 	}else{
+		print_r($users.'<br>');
 		foreach ($users as $login) {
+			print_r($login.'<br>')
 			($doWithUsers.'User')($login,$link);
 			if ($login==$_SESSION['user']) {
 					print_r($_SESSION['user']);
