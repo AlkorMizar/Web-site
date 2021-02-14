@@ -43,10 +43,12 @@ ini_set('display_startup_errors', 1);
 
 	$password=password_hash($password1, PASSWORD_DEFAULT);
 
+	$_SESSION['errorSingUp']='Sorry something broke'; 
 	if (!initDatabase('table',$link)) {
+
 		$error=insertUser($login,$email,$password,$link);
+		print_r($error);
 		closeDatabase($link);
-        $_SESSION['errorSingUp']='Sorry something broke';
         
         if($error==0){
         	unset($_SESSION['errorSingUp']);
