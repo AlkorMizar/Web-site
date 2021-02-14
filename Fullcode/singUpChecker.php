@@ -53,13 +53,13 @@ ini_set('display_startup_errors', 1);
         if($error==0){
         	unset($_SESSION['errorSingUp']);
         	$_SESSION['user']=$login;
-			//header('Location: /');
+			header('Location: /');
 			exit();
         }elseif($error===DUPLICATE_IN_SQL){
         	$_SESSION['errorSingUp']='Such email or login already exists';
         }
     }    
-	//header('Location: /singUp.php');
+	header('Location: /singUp.php');
 	exit();	
 ?>
 
