@@ -47,7 +47,7 @@ ini_set('display_startup_errors', 1);
 	if (!initDatabase('table',$link)) {
 
 		$error=insertUser($login,$email,$password,$link);
-		print_r($error);
+		$_SESSION['errorSingUp']=$error;
 		closeDatabase($link);
         
         if($error==0){
@@ -62,3 +62,4 @@ ini_set('display_startup_errors', 1);
 	header('Location: /singUp.php');
 	exit();	
 ?>
+
