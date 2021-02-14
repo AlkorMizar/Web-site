@@ -59,8 +59,10 @@
 	}
 
 	function blockUser($login,$link){
+		print_r("insaid");
 		$query ="UPDATE users SET status='Blocked' WHERE login = '$login'";
 		$users=mysqli_fetch_all(mysqli_query($link, $query),MYSQLI_ASSOC); 
+		print_r("out");
 		return mysqli_errno($link);	
 	}
 
